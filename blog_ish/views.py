@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 from .models import Post
 
 
 def index(request):
-    output = "Welcome to the main page"
-    return HttpResponse(output)
+    latest_blog_posts = Post.objects.order_by('-date_published')[:10]
+    template = loader.get_template('blog_ish/index.html')
+    context = {
+        'latest_blog_posts': latest_blog_posts,
+    }
+    return HttpResponse(template.render(context, request))
     
 def new_User(request):
     response = "New User Page"
