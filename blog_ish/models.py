@@ -10,7 +10,7 @@ class User(models.Model):
 
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    blog_text = models.CharField(max_length=500)
+    post_text = models.CharField(max_length=500)
     date_published = models.DateTimeField('date published')
 
 
