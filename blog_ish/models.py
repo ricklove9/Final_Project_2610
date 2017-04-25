@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 class User(models.Model):
-    name_text = models.CharField(max_length= 50)
+    name_text = models.CharField(max_length= 50, primary_key=True)
     date_signup = models.DateTimeField('date sign up')
     password_text = models.CharField(max_length= 15)
     

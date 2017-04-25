@@ -21,7 +21,7 @@ def post(request, user_id, post_id):
     return render(request, 'blog_ish/post.html', {'post': post})
     
 def userPage(request, user_id):
-    user = get_object_or_404(User, pk=User)
+    user = get_object_or_404(User, pk=user_id)
     return render(request, 'blog_ish/userPage.html', {'user': user})
     
 def new_Post(request, user_id):
