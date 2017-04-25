@@ -15,6 +15,9 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post_text = models.CharField(max_length=500)
     date_published = models.DateTimeField('date published')
+    
+    def __str__(self):
+        return self.post_text
 
 
 # Create your models here.
