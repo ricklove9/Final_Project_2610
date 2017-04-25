@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
-from .models import Post
+from .models import Post, User
 
 
 def index(request):
@@ -17,11 +17,12 @@ def new_User(request):
     return HttpResponse(response)
 
 def post(request, user_id, post_id):
-    response = "Username: %s Post#: %s" %(user_id, post_id)
-    return HttpResponse(response)
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'blog_ish/post.html', {'post': post})
     
 def userPage(request, user_id):
-    return HttpResponse("most recent postings by %s" %user_id)
+    user = get_object_or_404(User, pk=User)
+    return render(request, 'blog_ish/userPage.html', {'user': user})
     
 def new_Post(request, user_id):
     return HttpResponse("New post will be made by %s" %user_id)
