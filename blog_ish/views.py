@@ -19,7 +19,7 @@ def new_User(request):
 def post(request, user_id, post_id):
     user = get_object_or_404(User, pk=user_id)
     post = get_object_or_404(Post, pk=post_id)
-    return render(request, 'blog_ish/post.html', {'post': post})
+    return render(request, 'blog_ish/post.html', {'post': post, 'user': user})
     
 def userPage(request, user_id):
     user = get_object_or_404(User, pk=user_id)
