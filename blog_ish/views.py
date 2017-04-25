@@ -13,8 +13,9 @@ def index(request):
     return HttpResponse(template.render(context, request))
     
 def new_User(request):
-    response = "New User Page"
-    return HttpResponse(response)
+    template = loader.get_template('blog_ish/newUser.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 def post(request, user_id, post_id):
     user = get_object_or_404(User, pk=user_id)
