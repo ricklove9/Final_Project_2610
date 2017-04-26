@@ -34,6 +34,7 @@ def posting(request, user_id):
     return HttpResponse("I am posting!")
     
 def CreatingUser(request, user_id):
+    user = User.objects.create_user(pk.request.Post[username])
     return HttpResponse("NEW USER")
 
 # Create your views here.

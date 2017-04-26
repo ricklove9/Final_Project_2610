@@ -5,13 +5,10 @@ from django.db import models
 class UserManager(models.Manager):
     def create_user(self, username):
         user = self.create(name_text=username)
-        
         return user
 
 class User(models.Model):
     name_text = models.CharField(max_length= 50, primary_key=True)
-    date_signup = models.DateTimeField('date sign up')
-    
     objects = UserManager()
     
     def __str__(self):
