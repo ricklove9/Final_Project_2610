@@ -23,5 +23,7 @@ urlpatterns = [
     #/blog/user_name/posting
     url(r'^(?P<user_id>[0-9a-zA-Z]+)/posting/$', views.posting, name='posting'),
     
+    #blog/new/user_name
+    url(r'new/(?P<user_id>[0-9a-zA-Z]+)/$', views.new_User, name='new'),
     
 ]

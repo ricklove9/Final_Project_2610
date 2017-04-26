@@ -31,5 +31,8 @@ def new_Post(request, user_id):
 
 def posting(request, user_id):
     return("I am posting!")
+    
+def CreatingUser(request, user_id):
+    return("NEW USER")
 
 # Create your views here.
