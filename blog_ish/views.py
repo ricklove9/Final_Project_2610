@@ -29,5 +29,7 @@ def userPage(request, user_id):
 def new_Post(request, user_id):
     return HttpResponse("New post will be made by %s" %user_id)
 
+def posting(request, user_id):
+    return("I am posting!")
 
 # Create your views here.
