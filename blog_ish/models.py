@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 class UserManager(models.Manager):
-    def create_user(self, username, password):
+    def create_user(self, username):
         user = self.create(name_text=username)
         
         return user
