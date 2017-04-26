@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Post, User
+from django.core.urlresolvers import reverse
 
 
 def index(request):
@@ -30,9 +31,9 @@ def new_Post(request, user_id):
     return HttpResponse("New post will be made by %s" %user_id)
 
 def posting(request, user_id):
-    return("I am posting!")
+    return HttpResponse("I am posting!")
     
 def CreatingUser(request, user_id):
-    return("NEW USER")
+    return HttpResponse("NEW USER")
 
 # Create your views here.
