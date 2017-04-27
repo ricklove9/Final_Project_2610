@@ -1,0 +1,15 @@
+{{ post.post_text }}
+
+<form action={% url 'blog:commenting' post.id %}>
+    {% csrf_token %}
+    
+    <!--Author name: <br>
+    <input type="text" name="author" maxlength="50" id='author'> <br> -->
+    <br>
+    
+    comment: <br>
+    <input type="text" name="comment" maxlength="500" id='comment'> <br> <br>
+
+    
+    <input type="submit" value="Submit">
+</form>
