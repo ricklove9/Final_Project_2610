@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import Post, User
+from .models import Post, User, Comment
 from django.core.urlresolvers import reverse
 
 
@@ -32,7 +32,10 @@ def comment(request, post_id):
     return render(request, 'blog_ish/comment.html', {'post': post})
 
 def commenting(request, post_id):
-    return HttpResponse("I am commenting!")
+    post = get_object_or_404(Post, pk=post_id)
+    comment = Comment.objects.create_comment(post, request.POST.get('comment', request.GET['comment']))
+    comment.save()
+    return HttpResponseRedirect(reverse('blog:post', args=(post.id,)))
 
 #def new_User(request):
  #   template = loader.get_template('blog_ish/newUser.html')

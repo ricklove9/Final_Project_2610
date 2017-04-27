@@ -30,10 +30,17 @@ class Post(models.Model):
     def __str__(self):
         return self.post_text
         
+class CommentManager(models.Manager):
+    def create_comment(self, post, comment_text):
+        comment = self.create(post=post, comment_text=comment_text, date_published=datetime.now())
+        return comment
+        
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment_text = models.CharField(max_length=500)
     date_published = models.DateTimeField('date published')
+    
+    objects = CommentManager()
     
     def __str__(self):
         return self.comment_text

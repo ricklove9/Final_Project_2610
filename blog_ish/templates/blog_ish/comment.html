@@ -1,6 +1,6 @@
 {{ post.post_text }}
 
-<form action={% url 'blog:commenting' post.id %}>
+<form action="{% url 'blog:commenting' post.id %}">
     {% csrf_token %}
     
     <!--Author name: <br>

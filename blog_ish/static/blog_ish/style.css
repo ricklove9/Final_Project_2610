@@ -1,0 +1,35 @@
+body {
+    background-image: url("beach.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    
+}
+
+h1, .Post, .Comment{
+    background-image: url("wood2.jpg");
+    font-family: "Times New Roman", sans-serif, fantasy;
+}
+
+
+
+.Post, .Comment {
+        max-width: 500px;
+        font-size: large;
+        margin: 20px;    
+}
+
+.Post {
+  display:inline-block;  
+}
+
+.Comment {
+    background-image: url("Comment_Wood.jpg");
+    text-align: center;
+    font-weight: bold;
+    height:50px;
+
+}
+
+p {
+    margin:20px;
+}
