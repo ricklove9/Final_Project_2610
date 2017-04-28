@@ -53,7 +53,7 @@ a, a:visited {
     text-decoration: none;
 }
 
-#post {
+#post, #comment{
     margin:10px;
     width:300px;
     height:250px;
