@@ -5,18 +5,19 @@ body {
     
 }
 
-h1, .Post, .Comment{
-    background-image: url("images/wood.jpg");
-    font-family: "Times New Roman", sans-serif, fantasy;
-    border-radius:10px;
-}
-
 h1 {
     padding: 10px;
     height: 50px;
 }
 
-.Post, .Comment {
+h1, .Post, .Comment, .Submission, button, #submit{
+    background-image: url("images/wood.jpg");
+    font-family: "Times New Roman", sans-serif, fantasy;
+    border-radius:10px;
+}
+
+
+.Post, .Comment, .Submission, button, #submit {
         max-width: 500px;
         text-align:center;
         font-size: larger;
@@ -26,11 +27,16 @@ h1 {
         padding: 10px 0;
 }
 
+button {
+    display:block;
+    max-width: 250;
+}
+
 .Post {
     display: block;
 }
 
-.Comment {
+.Comment, #submit {
     background-image: url("images/Comment_Wood.jpg");
     font-size:large;
     height:50px;
@@ -45,4 +51,11 @@ a, a:visited {
     margin:20px;
     color: black;
     text-decoration: none;
+}
+
+#post {
+    margin:10px;
+    width:300px;
+    height:250px;
+    text-align: justify;
 }

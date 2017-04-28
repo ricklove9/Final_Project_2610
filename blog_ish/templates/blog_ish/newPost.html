@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
 
 <h1>Time for a post</h1>
-
+<div class="Submission">
 <form action={% url 'blog:posting' %}>
     {% csrf_token %}
     
@@ -11,7 +11,7 @@
     <input type="text" name="post" maxlength="50" id='post'> <br> <br>
 
     
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id='submit'>
 </form>
 
-<p>new post welcome</p>
+</div>

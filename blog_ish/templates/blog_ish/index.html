@@ -4,6 +4,8 @@
 
 <h1>Welcome to the Beach Blog!</h1>
 
+<button type="button"><a href="{% url 'blog:new_Post' %}" >Add a Post!</a></button>
+
 {% if latest_blog_posts %}
     {% for post in latest_blog_posts %}
        <div class="Post"><p></p><a href="/blog/{{ post.id }}/">{{ post.post_text }}</a></p></div>
