@@ -16,14 +16,13 @@ h1, .Post, .Comment, .Submission, button, #submit{
     border-radius:10px;
 }
 
-
 .Post, .Comment, .Submission, button, #submit {
         max-width: 500px;
         text-align:center;
         font-size: larger;
         font-weight: bold;
         width: 50%;
-        margin: 20 auto;
+        margin: auto;
         padding: 10px 0;
 }
 
@@ -36,8 +35,8 @@ button {
     display: block;
 }
 
-.Comment, #submit, #home {
-    background-image: url("images/Comment_Wood.jpg");
+.Comment, #submit, .home {
+    background-image: url("images/Comment_Wood2.jpg");
     font-size:large;
     display: block;
 
@@ -56,12 +55,13 @@ a, a:visited {
 #post, #comment{
     margin:10px;
     width:300px;
+    height: auto;
     text-align: justify;
 }
 
-#home {
+.home {
     margin-left: 15px;
     float: left;
     position: fixed;
-    max-width: 200;
+    max-width: 200px;
 }

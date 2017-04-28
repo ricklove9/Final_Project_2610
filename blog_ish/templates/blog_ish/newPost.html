@@ -1,20 +1,28 @@
-{% load staticfiles %}
+<!DOCTYPE html>
+<html>
 
-<link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
+<head>
+    <meta charset="utf-8"> {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
 
-<h1>Time for a post</h1>
+    <title>Make a Post</title>
+</head>
 
-<a href="{% url 'blog:index' %}"><button type="button"  id="home">Back to Home~</button></a></button>
+<body>
+    <h1>Time for a post</h1>
 
-<div class="Submission">
-<form action={% url 'blog:posting' %}>
-    {% csrf_token %}
-    
-    Post: <br>
-    <input type="text" name="post" maxlength="50" id='post'> <br> <br>
+    <a href="{% url 'blog:index' %}"><button type="button"  class="home">Back to Home~</button></a></button>
 
-    
-    <input type="submit" value="Submit" id='submit'>
-</form>
+    <div class="Submission">
+        <form action={% url 'blog:posting' %}>
+            {% csrf_token %} Post: <br>
+            <input type="text" name="post" maxlength="50" id='post'> <br> <br>
 
-</div>
+
+            <input type="submit" value="Submit" id='submit'>
+        </form>
+
+    </div>
+</body>
+
+</html>

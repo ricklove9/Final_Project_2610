@@ -1,29 +1,39 @@
-{% load staticfiles %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
-
-<h1>Add a Comment!</h1>
-
-<a href="{% url 'blog:index' %}" ><button type="button" id="home">Back to Home~</button></a></button>
-
-<div class='Post'>
-    <a href="{% url 'blog:post' post.id %}">
-        <p>
-{{ post.post_text }}
-    </a>
-    </p>
-</div>
-
-<div class="Submission">
-<form action="{% url 'blog:commenting' post.id %}">
-    {% csrf_token %}
-    <br>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
     
-    Comment: <br>
-    <input type="text" name="comment" maxlength="500" id='comment'> <br> <br>
+        <title>Make a Comment</title>
+    </head>
+    <body>
+        <h1>Add a Comment!</h1>
+
+        <a href="{% url 'blog:index' %}" ><button type="button" class="home">Back to Home~</button></a></button>
+
+        <div class='Post'>
+            <a href="{% url 'blog:post' post.id %}">
+            <p>
+                {{ post.post_text }}
+            </p>
+            </a>
+        </div>
+
+        <br>
+
+        <div class="Submission">
+            <form action="{% url 'blog:commenting' post.id %}">
+            {% csrf_token %}
+            <br>
+    
+            Comment: <br>
+            <input type="text" name="comment" maxlength="500" id='comment'> <br> <br>
 
     
-    <input type="submit" value="Submit" id="submit">
+            <input type="submit" value="Submit" id="submit">
     
-    </div>
-</form>
+    
+            </form>
+        </div>
+    </body>
+</html>

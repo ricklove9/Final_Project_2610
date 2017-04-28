@@ -1,17 +1,32 @@
-{% load staticfiles %}
+<!DOCTYPE html>
+<html>
 
-<link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
+<head>
+    <meta charset="utf-8"> {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
+    <script  type="text/javascript" src="{% static 'blog_ish/javascript.js' %}"></script>
+    <title>Beach Blog!</title>
+</head>
 
-<h1>Welcome to the Beach Blog!</h1>
-
-<a href="{% url 'blog:new_Post' %}" ><button type="button">Add a Post!</button></a></button>
-
-{% if latest_blog_posts %}
-    {% for post in latest_blog_posts %}
-       <div class="Post"><a href="/blog/{{ post.id }}/"><p>{{ post.post_text }}</p></a></div>
-    {% endfor %}
-{% else %}
+<body>
+    <h1>Welcome to the Beach Blog!</h1>
+    
+     <button type="button" onclick="javabutton(self)" class="home">JavaScript</button>
+    
+    <a href="{% url 'blog:new_Post' %}"><button type="button">Add a Post!</button></a></button>
+    <br> {% if latest_blog_posts %} {% for post in latest_blog_posts %}
+    <br>
+    <div class="Post">
+        <a href="/blog/{{ post.id }}/">
+            <p>{{ post.post_text }}</p>
+        </a>
+    </div>
+    {% endfor %} {% else %}
     <div class="Post">
         <p>No posts are available.</p>
     </div>
-{% endif %}
+    {% endif %}
+
+</body>
+
+</html>

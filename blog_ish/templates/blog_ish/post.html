@@ -1,21 +1,34 @@
-{% load staticfiles %}
+<!DOCTYPE html>
+<html>
 
-<link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
+<head>
+    <meta charset="utf-8"> {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
 
-<h1>Aloha! This is post # {{post.pk}}</h1>
+    <title>It's a Post</title>
+</head>
 
-<a href="{% url 'blog:index' %}"><button type="button"  id="home">Back to Home~</button></a></button>
+<body>
+    <h1>Aloha! It's a post! </h1>
 
-<div class="Post">
-    <p>
-    {{ post.post_text }}
-    </p>
-    
+    <a href="{% url 'blog:index' %}"><button type="button"  class="home">Back to Home~</button></a></button>
+
+    <div class="Post">
+        <p>
+            {{ post.post_text }}
+        </p>
+
         {% for comment in post.comment_set.all %}
-            <div class="Comment"><p>{{ comment.comment_text }}</p></div>
+        <br>
+        <div class="Comment">
+            <p>{{ comment.comment_text }}</p>
+        </div>
         {% endfor %}
 
-</div>
+    </div>
 
-<a href="{% url 'blog:comment' post.id %}" ><button type="button">Add a Comment!</button></a></button>
-    
+    <br>
+    <a href="{% url 'blog:comment' post.id %}"><button type="button">Add a Comment!</button></a></button>
+</body>
+
+</html>
