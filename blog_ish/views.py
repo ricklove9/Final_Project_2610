@@ -37,19 +37,5 @@ def commenting(request, post_id):
     comment.save()
     return HttpResponseRedirect(reverse('blog:post', args=(post.id,)))
 
-#def new_User(request):
- #   template = loader.get_template('blog_ish/newUser.html')
-  #  context = {}
-   # return HttpResponse(template.render(context, request))
-    
-def userPage(request, user_id):
-    user = get_object_or_404(User, pk=user_id)
-    return render(request, 'blog_ish/userPage.html', {'user': user})
-    
-def CreatingUser(request):
-    user = User.objects.create_user(request.POST.get('username', request.GET['username']))
-    user.save()
-    #return HttpResponse("New User")
-    return HttpResponseRedirect(reverse('blog:index'))
 
 # Create your views here.
