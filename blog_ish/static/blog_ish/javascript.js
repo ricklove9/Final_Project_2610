@@ -1,3 +1,13 @@
-var javabutton = function(me){
-    me.textContent = "Pressed";
+var doSomething = function(me){
+    
+    if(me.textContent == "JavaScript"){
+        me.textContent = "Again for Random#"
+    }
+    
+    else{
+        var num = Math.floor((Math.random()*100)+1)
+        me.textContent= num;
+    }
+    
+    
 }

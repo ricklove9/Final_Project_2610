@@ -11,7 +11,7 @@
 <body>
     <h1>Welcome to the Beach Blog!</h1>
     
-     <button type="button" onclick="javabutton(self)" class="home">JavaScript</button>
+     <button type="button" class="home" onclick="doSomething(this)">JavaScript</button>
     
     <a href="{% url 'blog:new_Post' %}"><button type="button">Add a Post!</button></a></button>
     <br> {% if latest_blog_posts %} {% for post in latest_blog_posts %}
