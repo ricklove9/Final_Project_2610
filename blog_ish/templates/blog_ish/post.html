@@ -2,12 +2,16 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'blog_ish/style.css' %}" />
 
-<p>
-    {{ post.post_text }}
-</p>
+<h1>Aloha! This is post # {{post.pk}}</h1>
 
-    <ul>
+<div class="Post">
+    <p>
+    {{ post.post_text }}
+    </p>
+    
         {% for comment in post.comment_set.all %}
-            <li> {{ comment.comment_text }}</li>
+            <div class="Comment"><p>{{ comment.comment_text }}</p></div>
         {% endfor %}
-    </ul>
+
+</div>
+    
