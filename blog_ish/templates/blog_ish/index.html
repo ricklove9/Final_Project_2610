@@ -6,7 +6,7 @@
 
 {% if latest_blog_posts %}
     {% for post in latest_blog_posts %}
-       <li><a href="/blog/{{ post.id }}/">{{ post.post_text }}</a></li>
+       <div class="Post"><p></p><a href="/blog/{{ post.id }}/">{{ post.post_text }}</a></p></div>
     {% endfor %}
 {% else %}
     <p>No polls are available.</p>
