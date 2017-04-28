@@ -11,5 +11,7 @@
        <div class="Post"><a href="/blog/{{ post.id }}/"><p>{{ post.post_text }}</p></a></div>
     {% endfor %}
 {% else %}
-    <p>No posts are available.</p>
+    <div class="Post">
+        <p>No posts are available.</p>
+    </div>
 {% endif %}
