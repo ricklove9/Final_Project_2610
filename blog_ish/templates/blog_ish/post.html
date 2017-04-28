@@ -4,6 +4,8 @@
 
 <h1>Aloha! This is post # {{post.pk}}</h1>
 
+<a href="{% url 'blog:index' %}" id="home"><button type="button">Back to Home~</button></a></button>
+
 <div class="Post">
     <p>
     {{ post.post_text }}
