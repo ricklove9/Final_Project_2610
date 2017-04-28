@@ -16,7 +16,7 @@
     <div class="Submission">
         <form action={% url 'blog:posting' %}>
             {% csrf_token %} Post: <br>
-            <input type="text" name="post" maxlength="50" id='post'> <br> <br>
+            <input type="text" name="post" maxlength="50" id='post' autofocus> <br> <br>
 
 
             <input type="submit" value="Submit" id='submit'>
